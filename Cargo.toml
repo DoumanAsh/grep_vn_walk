@@ -1,0 +1,28 @@
+[package]
+name = "grep_vn_walk"
+version = "0.1.0"
+description = "Find walkthrough for VN"
+authors = ["Douman <douman@gmx.se>"]
+license = "Apache-2.0"
+readme = "README.md"
+include = [
+    "**/*.rs",
+    "Cargo.toml",
+    "README.md"
+]
+
+[dependencies]
+encoding = "0.2"
+actix = "0.5"
+futures = "0.1"
+lazy-panic = "0.3"
+regex = "1"
+
+[dependencies.actix-web]
+version = "0.6"
+default-features = false
+features = ["tls", "flate2-c"]
+
+[profile.release]
+lto = true
+opt-level = 2
